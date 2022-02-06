@@ -4,7 +4,7 @@
   "arrowParens": "always",
   "max-len": [
     "error",
-    100,
+    50,
     2
   ],
   "tabWidth": 4,

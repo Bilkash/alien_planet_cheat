@@ -1,18 +1,14 @@
 import React from "react";
-import styled from "styled-components";
 
 import Layout from "./components/Layout";
+import Main from "./components/Main";
 
 function App() {
 	return (
 		<Layout>
-			<Test>{"sSdad"}</Test>
+			<Main />
 		</Layout>
 	);
 }
 
 export default App;
-
-const Test = styled.div`
-	color: red;
-`;
