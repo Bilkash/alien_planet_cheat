@@ -2,18 +2,19 @@ import React, { useState } from "react";
 import AddButton from "../AddButton";
 
 import * as css from "./index.styled";
-import { Victim } from "../types";
+import { VictimType } from "../types";
+import Victim from "../Victim";
 
 export default function Main() {
-	const [victimList, setVictimList] = useState<Victim[]>([]);
+	const [victimList, setVictimList] = useState<VictimType[]>([]);
 
-	function Add(it: Victim) {
+	function Add(it: VictimType) {
 		setVictimList((arr) => [...arr, it]);
 	}
 
 	function renderVictimList() {
 		return victimList.map((it, index) => {
-			return <div key={index}>{it.name}</div>;
+			return <Victim key={index} {...it} />;
 		});
 	}
 

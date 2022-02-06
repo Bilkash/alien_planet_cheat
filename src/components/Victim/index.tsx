@@ -1,13 +1,13 @@
 import React from "react";
-import { Victim } from "../types";
+import { VictimType } from "../types";
 import * as css from "./index.styled";
 
-export default function Victim(props: Victim) {
+export default function Victim(props: VictimType) {
 	const { name } = props;
 
 	return (
 		<css.Wrapper>
-			<div>{name}</div>
+			<css.Name>{name}</css.Name>
 		</css.Wrapper>
 	);
 }

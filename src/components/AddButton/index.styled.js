@@ -27,4 +27,9 @@ export const Input = styled.input`
 	height: 24px;
 
 	font-size: 13px;
+
+	border-radius: 5px;
+
+	border: ${(props) =>
+		props.theme.color ? "3px solid red" : "1px solid black"};
 `;

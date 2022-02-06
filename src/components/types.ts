@@ -1,3 +1,3 @@
-export type Victim = {
+export type VictimType = {
 	name: string;
 };
