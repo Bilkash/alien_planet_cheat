@@ -20,7 +20,7 @@ export default function Main() {
 
 	return (
 		<css.Wrapper>
-			<div>main list</div>
+			<css.Title>Victim list</css.Title>
 
 			<div>{renderVictimList()}</div>
 
