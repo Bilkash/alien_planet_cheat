@@ -8,4 +8,7 @@ export const Wrapper = styled.div`
 export const Title = styled.div`
 	font-size: 30px;
 	line-height: 32px;
+
+	border-bottom: 3px solid black;
+	border-image: linear-gradient(to right, black, white) 1;
 `;
