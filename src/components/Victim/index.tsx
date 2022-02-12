@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { VictimType } from "../types";
+import type { VictimType } from "../types";
 import Volition from "./Volition";
 
 import * as css from "./index.styled";

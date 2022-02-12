@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import ZenKakuGothicAntiqueBlack from "./fonst/ZenKakuGothicAntique-Black.ttf";
 import ZenKakuGothicAntiqueBold from "./fonst/ZenKakuGothicAntique-Bold.ttf";
 import ZenKakuGothicAntiqueLight from "./fonst/ZenKakuGothicAntique-Light.ttf";

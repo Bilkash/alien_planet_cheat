@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Main = styled.div`
-	min-height: 100vh;
+	min-height: calc(100vh + 50px);
 `;
 
 export const Header = styled.div`
@@ -12,7 +12,7 @@ export const Header = styled.div`
 
 export const Footer = styled.div`
 	width: 100%;
-	height: 50px;
+	height: 100%;
 	background-color: black;
 `;
 

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import AddButton from "../AddButton";
+import Victim from "../Victim";
+import type { VictimType } from "../types";
 
 import * as css from "./index.styled";
-import { VictimType } from "../types";
-import Victim from "../Victim";
+import Change from "../Change";
 
 export default function Main() {
 	const [victimList, setVictimList] = useState<VictimType[]>([]);
@@ -25,6 +26,8 @@ export default function Main() {
 			<div>{renderVictimList()}</div>
 
 			<AddButton handler={Add} />
+
+			<Change />
 		</css.Wrapper>
 	);
 }

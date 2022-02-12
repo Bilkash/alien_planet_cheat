@@ -1,10 +1,7 @@
 import React from "react";
-import * as css from "./Volition.styled";
+import type { VolitionType } from "../types";
 
-type VolitionType = {
-	changeVolition: (add: boolean) => void;
-	volition: number;
-};
+import * as css from "./Volition.styled";
 
 export default function Volition(props: VolitionType) {
 	const { volition, changeVolition } = props;
