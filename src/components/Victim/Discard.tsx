@@ -18,7 +18,6 @@ const defArr: DefineArrIt[] = [
 
 export default function Discard() {
 	const [discard, setDiscard] = useState<DefineArrIt[]>(defArr);
-	const [cards, setCards] = useState<number[]>([]);
 
 	const changeDiscard = function (
 		arr: DefineArrIt[],
@@ -40,7 +39,7 @@ export default function Discard() {
 			return arr;
 		}, []);
 
-		setCards(newCards);
+		console.log(newCards);
 	}, [discard]);
 
 	return (
