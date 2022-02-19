@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import type { DefineArrIt } from "../types";
 
 import * as css from "./Discard.styled";
+import { addCards, storeCards } from "../../store";
 
 const defArr: DefineArrIt[] = [
 	{ id: 1, available: false },
@@ -16,7 +17,11 @@ const defArr: DefineArrIt[] = [
 	{ id: 10, available: false },
 ];
 
-export default function Discard() {
+type DiscardType = {
+	name: string;
+};
+
+export default function Discard(props: DiscardType) {
 	const [discard, setDiscard] = useState<DefineArrIt[]>(defArr);
 
 	const changeDiscard = function (
@@ -39,7 +44,11 @@ export default function Discard() {
 			return arr;
 		}, []);
 
-		console.log(newCards);
+		if (props) {
+			storeCards.dispatch(
+				addCards({ name: props.name, cards: newCards })
+			);
+		}
 	}, [discard]);
 
 	return (

@@ -24,7 +24,7 @@ export default function Victim(props: VictimType) {
 
 			<Volition changeVolition={changeVolition} volition={volition} />
 
-			<Discard />
+			<Discard name={name} />
 		</css.Wrapper>
 	);
 }

@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { VictimType } from "../types";
 import Plus from "../../svg/Plus";
 
 import * as css from "./index.styled";
+import { storeCards } from "../../store";
 
 type AddButtonType = {
 	handler: (it: VictimType) => void;
@@ -14,19 +15,41 @@ export default function AddButton(props: AddButtonType) {
 
 	const [name, setName] = useState("");
 	const [error, setError] = useState(false);
+	const [cards, setCards] = useState<any>({});
+
+	useEffect(() => {
+		storeCards.subscribe(() => setCards(storeCards.getState()));
+	});
+
+	useEffect(() => {
+		if (Object.keys(cards).includes(name)) {
+			console.log("ER");
+
+			setError(true);
+		} else {
+			setError(false);
+		}
+	}, [name]);
+
+	function add() {
+		if (name) {
+			if (Object.keys(cards).includes(name)) {
+				console.log("ER");
+
+				setError(true);
+			} else {
+				setError(false);
+				handler({ name });
+				setName("");
+			}
+		} else {
+			setError(true);
+		}
+	}
 
 	return (
 		<css.Wrapper>
-			<css.Button
-				onClick={() => {
-					if (name) {
-						setError(false);
-						handler({ name });
-						setName("");
-					} else {
-						setError(true);
-					}
-				}}>
+			<css.Button onClick={() => add()}>
 				<Plus />
 			</css.Button>
 

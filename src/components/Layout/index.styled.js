@@ -18,4 +18,5 @@ export const Footer = styled.div`
 
 export const Inner = styled.div`
 	min-height: calc(100vh - 100px);
+	margin-bottom: 100px;
 `;
