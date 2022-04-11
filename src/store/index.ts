@@ -1,6 +1,5 @@
 import { createStore } from "redux";
 
-//types
 export function addCards(cards: any) {
 	return {
 		type: "ADD_CARDS",
