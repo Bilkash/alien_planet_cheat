@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 import { VictimType } from "../types";
+import { storeCards } from "../../store";
 import Plus from "../../svg/Plus";
 
 import * as css from "./index.styled";
-import { storeCards } from "../../store";
 
 type AddButtonType = {
 	handler: (it: VictimType) => void;
@@ -23,8 +23,6 @@ export default function AddButton(props: AddButtonType) {
 
 	useEffect(() => {
 		if (Object.keys(cards).includes(name)) {
-			console.log("ER");
-
 			setError(true);
 		} else {
 			setError(false);
@@ -34,10 +32,12 @@ export default function AddButton(props: AddButtonType) {
 	function add() {
 		if (name) {
 			if (Object.keys(cards).includes(name)) {
-				console.log("ER");
-
 				setError(true);
-			} else {
+			}
+			if (Object.keys(cards).length === 6) {
+				setError(true);
+			}
+			else {
 				setError(false);
 				handler({ name });
 				setName("");

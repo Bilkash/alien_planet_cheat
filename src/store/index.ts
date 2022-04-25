@@ -1,13 +1,18 @@
 import { createStore } from "redux";
+import {PayloadType} from "../components/types";
 
-export function addCards(cards: any) {
+interface StoreTypes {
+	[propName: string]: number[]
+}
+
+export function addCards(cards: PayloadType) {
 	return {
 		type: "ADD_CARDS",
 		payload: cards,
 	};
 }
 
-function cardsReducer(state: any = {}, action: any) {
+function cardsReducer<StoreTypes>(state: StoreTypes, action: any) {
 	if (action.payload) {
 		const {
 			payload: { name, cards },
@@ -17,5 +22,4 @@ function cardsReducer(state: any = {}, action: any) {
 	}
 }
 
-//store
 export const storeCards = createStore(cardsReducer);

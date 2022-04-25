@@ -9,7 +9,22 @@ export default function Change() {
 		storeCards.subscribe(() => setCards(storeCards.getState()));
 	});
 
-	console.log(cards);
+	function renderChanges() {
+		return Object.entries(cards).map(it => {
+			return (
+				<css.Player key={Math.random()}>
+					<css.PlayerName>
+						{it[0]}
+					</css.PlayerName>
+					cards: {it[1]}
+				</css.Player>
+			);
+		});
+	}
 
-	return <css.Wrapper>Change</css.Wrapper>;
+	return (
+		<css.Wrapper>
+			<css.Inner>{renderChanges()}</css.Inner>
+		</css.Wrapper>
+	);
 }

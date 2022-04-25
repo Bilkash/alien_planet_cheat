@@ -11,3 +11,8 @@ export type DefineArrIt = {
 	id: number;
 	available: boolean;
 };
+
+export type PayloadType = {
+	name: string,
+	cards: number[]
+}
